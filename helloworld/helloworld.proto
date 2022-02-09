@@ -1,6 +1,7 @@
 
 syntax = "proto3";
 
+//if `go_package` is changed, run `go mod tidy` and update import.
 option go_package = "github.com/kappa-lab/grpc-playground/helloworld";
 option java_multiple_files = true;
 option java_package = "io.grpc.examples.helloworld";

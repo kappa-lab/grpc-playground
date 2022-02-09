@@ -5,4 +5,11 @@ gen-protoc:
 	& go mod tidy
 
 
+start-server:
+	go run ./server/main.go
+
+start-client:
+	go run ./client/main.go -name=Taro
+
+
 .PHONY: gen protoc	
