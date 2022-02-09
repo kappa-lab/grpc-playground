@@ -25,6 +25,11 @@ func (s *server) SayHello(ctx context.Context, req *pb.HelloRequest) (*pb.HelloR
 	return &pb.HelloReply{Message: "Hello " + req.GetName()}, nil
 }
 
+func (s *server) SayGoodby(ctx context.Context, req *pb.GoodbyRequest) (*pb.GoodbyReply, error) {
+	log.Printf("Received:  %s :%d", req.GetName(), req.GetAge())
+	return &pb.GoodbyReply{Message: fmt.Sprintf("Goodby %s :%d", req.GetName(), req.GetAge())}, nil
+}
+
 func main() {
 	flag.Parse()
 	listen, err := net.Listen("tcp", fmt.Sprintf("localhost:%d", *port))

@@ -44,4 +44,11 @@ func main() {
 
 	log.Printf("Recieve: %v", res)
 
+	goodby, err := client.SayGoodby(ctx, &pb.GoodbyRequest{Name: *name, Age: int32(20)})
+	if err != nil {
+		log.Fatalf("coud not connect: %v", err)
+	}
+
+	log.Printf("Recieve: %v", goodby)
+
 }
