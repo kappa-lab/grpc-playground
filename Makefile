@@ -5,6 +5,9 @@ gen-protoc:
 	& go mod tidy
 
 
+gen-protoc-dart:
+	protoc --dart_out=grpc:client-dart/lib/src/generated -Ihelloworld helloworld/helloworld.proto
+
 start-server:
 	go run ./server/main.go
 
