@@ -9,7 +9,7 @@ main(List<String> args) async {
 
   final channel = ClientChannel(
     "localhost",
-    port: 50052,
+    port: 50051,
     options: ChannelOptions(credentials: ChannelCredentials.insecure()),
   );
   final client = GreeterClient(channel);
@@ -24,5 +24,5 @@ main(List<String> args) async {
 
   await channel.shutdown();
 
-  debugPrint();
+  ;
 }
