@@ -5,7 +5,6 @@
 // @dart = 2.12
 // ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
-import 'dart:async' as $async;
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
@@ -210,19 +209,5 @@ class GoodbyReply extends $pb.GeneratedMessage {
   $core.bool hasMessage() => $_has(0);
   @$pb.TagNumber(1)
   void clearMessage() => clearField(1);
-}
-
-class GreeterApi {
-  $pb.RpcClient _client;
-  GreeterApi(this._client);
-
-  $async.Future<HelloReply> sayHello($pb.ClientContext? ctx, HelloRequest request) {
-    var emptyResponse = HelloReply();
-    return _client.invoke<HelloReply>(ctx, 'Greeter', 'SayHello', request, emptyResponse);
-  }
-  $async.Future<GoodbyReply> sayGoodby($pb.ClientContext? ctx, GoodbyRequest request) {
-    var emptyResponse = GoodbyReply();
-    return _client.invoke<GoodbyReply>(ctx, 'Greeter', 'SayGoodby', request, emptyResponse);
-  }
 }
 

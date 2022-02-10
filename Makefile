@@ -6,7 +6,7 @@ gen-protoc:
 
 
 gen-protoc-dart:
-	protoc --dart_out=./client-dart/lib/src/generated -Ihelloworld helloworld/helloworld.proto
+	protoc --dart_out=grpc:client-dart/lib/src/generated -Ihelloworld helloworld/helloworld.proto
 
 start-server:
 	go run ./server/main.go
