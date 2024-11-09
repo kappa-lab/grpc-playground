@@ -14,5 +14,12 @@ start-server:
 start-client:
 	go run ./client/main.go -name=Taro
 
+grpcurl/list:
+	grpcurl -proto=helloworld/helloworld.proto -plaintext localhost:50051 list
 
-.PHONY: gen protoc	
+grpcurl/SayHello:
+	grpcurl -proto=helloworld/helloworld.proto \
+	-d '{"name": "mygrpcurl"}' \
+	-plaintext localhost:50051 helloworld.Greeter/SayHello
+
+.PHONY: gen protoc	grpcurl
