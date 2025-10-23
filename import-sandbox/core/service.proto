@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package core;
+
+option go_package = "github.com/kappa-lab/grpc-playground/import-sandbox/pb/core";
+
+import "core/model.proto";
+
+service UserService {
+  rpc CreateUser(UserRequest) returns (UserResponse);
+  rpc GetUser(UserRequest) returns (UserResponse);
+  rpc DeleteUser(UserRequest) returns (UserResponse);
+}

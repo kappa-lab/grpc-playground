@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package gateway;
+
+option go_package = "github.com/kappa-lab/grpc-playground/import-sandbox/pb/gateway";
+
+import "core/model.proto";
+import "gateway/model.proto";
+
+service GatewayService {
+  rpc Auth(AuthRequest) returns (core.UserResponse);
+}
+
+service UserService {
+  rpc GetUser(core.UserRequest) returns (core.UserResponse);
+}
